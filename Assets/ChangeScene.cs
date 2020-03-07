@@ -13,8 +13,9 @@ public class ChangeScene : MonoBehaviour
 
     private void GameSceneLoad(Scene next, LoadSceneMode mode)
     {
-        GameManager GManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        GManager.display = "Changed!";
+        //GameManager gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        GameManager gameManager = GameManager.instance;
+        gameManager.display = "Changed!";
         SceneManager.sceneLoaded -= GameSceneLoad;
     }
 }

@@ -5,13 +5,14 @@ using UnityEngine.UI;
 
 public class TextDisplay : MonoBehaviour
 {
-    private GameManager _Gmanager;
+    private GameManager _gameManager;
     private Text text;
 
     void Start()
     {
-        _Gmanager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //_gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        _gameManager = GameManager.instance;
         text = GetComponent<Text>();
-        text.text = _Gmanager.display;
+        text.text = _gameManager.display;
     }
 }
